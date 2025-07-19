@@ -1,117 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Artist Profile</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KingShadP | Official Site</title>
+    <meta name="description" content="Official website of music artist KingShadP – music, merch, story, and contact." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --rose-gold: #e0bfb8;
+            --rose-gold-soft: #f0e0d6;
+            --matte-black: #0b0b0b;
+            --candy-red: #e34234;
+            --candy-red-hot: #ff5a49;
+            --gradient-dark: radial-gradient(circle at 30% 20%, #1d1d1d 0%, #000 70%);
+        }
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            background: var(--matte-black);
+            color: var(--rose-gold-soft);
         }
-        header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        nav {
-            text-align: center;
-            margin: 1rem 0;
-        }
-        nav a {
-            margin: 0 1rem;
-            text-decoration: none;
-            color: #2c3e50;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        .bio {
-            text-align: center;
-        }
-        .bio img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            margin-bottom: 1rem;
-        }
-        .bio p {
-            line-height: 1.6;
-        }
-        .music {
-            margin-top: 2rem;
-        }
-        .music h2 {
-            text-align: center;
-        }
-        .music iframe {
-            width: 100%;
-            height: 150px;
-            margin-bottom: 1rem;
-            border: none;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem 0;
-            background-color: #2c3e50;
-            color: white;
-            margin-top: 2rem;
+        a { color: var(--rose-gold); }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: rgba(0,0,0,0.6); position: fixed; width: 100%; z-index: 1000; }
+        nav a { text-decoration: none; color: var(--rose-gold); font-weight: 600; margin: 0 1rem; }
+        .hero { text-align: center; padding: 8rem 1rem; background: var(--gradient-dark); }
+        .hero img { max-width: 200px; }
+        .hero h1 { font-size: 3rem; color: var(--rose-gold); letter-spacing: 2px; }
+        .tagline { font-size: 1.2rem; color: var(--rose-gold-soft); }
+        .section-inner { max-width: 1100px; margin: 0 auto; padding: 4rem 1rem; }
+        .section-title { font-size: 2rem; color: var(--candy-red); text-transform: uppercase; letter-spacing: 2px; }
+        footer { text-align: center; padding: 2rem 1rem; background: #050505; }
+        footer .socials { margin-bottom: 1rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        footer .socials a { color: var(--rose-gold); text-decoration: none; font-size: 1rem; font-weight: 600; }
+        .instagram-feed, .youtube-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 2rem; }
+        iframe { width: 100%; border: none; border-radius: 8px; background: #111; }
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 2.3rem; }
+            .section-title { font-size: 1.6rem; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>KingShadP</h1>
-        <p>Welcome to my official music artist profile!</p>
-    </header>
-
     <nav>
-        <a href="#bio">About</a>
-        <a href="#music">Music</a>
-        <a href="#contact">Contact</a>
+        <a href="#home"><img src="KINGSHADP-logos_transparent.png" alt="KingShadP Logo" style="height:40px;" /></a>
+        <div>
+            <a href="#about">About</a>
+            <a href="#music">Music</a>
+            <a href="#merch">Merch</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
-    <div class="container" id="bio">
-        <div class="bio">
-            <img src="profile.jpg" alt="Your Profile Picture">
-            <h2>About Me</h2>
-            <p>KingShadP is a passionate and innovative music artist known for blending genres and creating unique soundscapes. With a deep love for storytelling through music, KingShadP draws inspiration from personal experiences and cultural influences. His journey began with a vision to inspire and connect with audiences worldwide.</p>
-            <p>Growing up, KingShadP was surrounded by diverse musical influences that shaped his eclectic style. From soulful melodies to hard-hitting beats, his music resonates with a wide audience. Each track tells a story, weaving together emotions and experiences that listeners can relate to. Whether it’s a high-energy anthem or a heartfelt ballad, KingShadP’s songs leave a lasting impact.</p>
-            <p>Throughout his career, KingShadP has achieved numerous milestones, including releasing chart-topping singles and collaborating with renowned artists. His performances at major venues and festivals have garnered him a loyal fanbase, and his ability to connect with the audience is unmatched. Critics have praised his artistry, calling him a "visionary" in the music industry.</p>
-            <p>In addition to his music, KingShadP is dedicated to giving back to the community. He actively participates in charity events and uses his platform to inspire the next generation of artists. His commitment to authenticity and innovation continues to set him apart, making him a trailblazer in the industry.</p>
-            <p>Join the movement and experience the artistry of KingShadP. Explore his music, follow his journey, and become part of a story that’s just getting started.</p>
-        </div>
-    </div>
+    <header class="hero" id="home">
+        <img src="KINGSHADP-logos_transparent.png" alt="KingShadP Logo">
+        <h1>KINGSHADP</h1>
+        <p class="tagline">Rise Like a King, Inspire Like a Legend</p>
+    </header>
 
-    <div class="container" id="music">
-        <div class="music">
-            <h2>My Music</h2>
-            <iframe src="https://open.spotify.com/embed/artist/Kingshadp"></iframe>
-            <iframe src="https://www.youtube.com/embed/Kingshadshit"></iframe>
-        </div>
-    </div>
+    <section id="about" class="section-inner">
+        <h2 class="section-title">About</h2>
+        <p>KingShadP is a dynamic and trailblazing artist—an architect of energy—blending raw emotion, cinematic atmosphere, and rhythmic fire. Powered by the signature palette of Rose Gold, Matte Black, and Candy Red, his sonic universe is both regal and rebellious. From underground sessions and late-night writing marathons to high-voltage performances, every movement is fueled by vision, perseverance, and purpose. His mission: turn personal struggle, ambition, and elevation into anthems that move culture forward.</p>
+    </section>
 
-    <div class="container" id="contact">
-        <h2>Contact</h2>
-        <p>For bookings and inquiries, email me at <a href="mailto:kingshadp@example.com">kingshadp@example.com</a>.</p>
-    </div>
+    <section id="music" class="section-inner">
+        <h2 class="section-title">Music</h2>
+        <div class="youtube-videos">
+            <!-- This pulls the uploads for the YouTube channel (username-based). 
+                 If this doesn't work for your channel, replace with specific video embed URLs. -->
+            <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=KingShadP" title="YouTube Uploads" allowfullscreen></iframe>
+        </div>
+        <h2 class="section-title">Instagram Feed</h2>
+        <div class="instagram-feed">
+            <!-- Replace CODE with actual Instagram post shortcodes or use a plugin/service for auto-feed -->
+            <iframe src="https://www.instagram.com/p/CODE/embed" allowtransparency="true" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <section id="merch" class="section-inner">
+        <h2 class="section-title">Merch</h2>
+        <p>Exclusive drops. Limited runs. Represent the brand.</p>
+        <p><a href="https://youbrowseyoubuy.myshopify.com" target="_blank" rel="noopener" style="color: var(--candy-red); font-weight:700;">Shop Now</a></p>
+    </section>
+
+    <section id="contact" class="section-inner">
+        <h2 class="section-title">Contact</h2>
+        <p>Email: <a href="mailto:kingshadp@example.com">kingshadp@example.com</a></p>
+    </section>
 
     <footer>
-        <p>&copy; 2024 KingShadP. All rights reserved.</p>
+        <div class="socials">
+            <a href="https://instagram.com/KingShadP" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://twitter.com/KingShadP" target="_blank" rel="noopener">Twitter/X</a>
+            <a href="https://facebook.com/KingShadP" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://youtube.com/@KingShadP" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://open.spotify.com/artist/Kingshadp" target="_blank" rel="noopener">Spotify</a>
+        </div>
+        <p>&copy; 2024 KINGSHADP. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
