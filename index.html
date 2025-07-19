@@ -1,104 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
+    <!-- ================= PRIMARY META ================= -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>KingShadP | Official Site</title>
-    <meta name="description" content="Official website of music artist KingShadP – music, merch, story, and contact." />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Official website of music artist KingShadP – music, videos, merch, shows, brand experience. Rise Like a King, Inspire Like a Legend." />
+    <meta name="theme-color" content="#0b0b0b" />
+
+    <!-- ================= SOCIAL / OPEN GRAPH ================= -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="KingShadP | Official Site" />
+    <meta property="og:description" content="Dive into the world of KingShadP – music, visuals, merch, shows, story." />
+    <meta property="og:url" content="https://kingshadp.github.io/" />
+    <meta property="og:image" content="https://kingshadp.github.io/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@KingShadP" />
+    <meta name="twitter:title" content="KingShadP | Official Site" />
+    <meta name="twitter:description" content="The official digital kingdom of KingShadP." />
+    <meta name="twitter:image" content="https://kingshadp.github.io/og-image.jpg" />
+
+    <!-- ================= FAVICONS (PLACEHOLDERS) ================= -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!-- ================= FONTS ================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- ================= STRUCTURED DATA (ARTIST) ================= -->
+    <script type="application/ld+json">{
+      "@context":"https://schema.org",
+      "@type":"MusicGroup",
+      "name":"KingShadP",
+      "image":"https://kingshadp.github.io/KINGSHADP-logos_transparent.png",
+      "url":"https://kingshadp.github.io/",
+      "genre":["Hip Hop","Fusion"],
+      "description":"Dynamic trailblazing artist blending emotion, cinematic atmosphere and rhythmic fire.",
+      "sameAs":[
+        "https://instagram.com/KingShadP",
+        "https://twitter.com/KingShadP",
+        "https://facebook.com/KingShadP",
+        "https://youtube.com/@KingShadShit",
+        "https://open.spotify.com/artist/Kingshadp"
+      ]
+    }</script>
+    <!-- ================= STRUCTURED DATA (EVENTS / SHOWS) ================= -->
+    <script type="application/ld+json">{
+      "@context":"https://schema.org",
+      "@type":"ItemList",
+      "itemListElement":[
+        {"@type":"MusicEvent","name":"KingShadP Live - Honolulu","startDate":"2025-08-12","location":{"@type":"Place","name":"Black Sand Lounge","address":{"@type":"PostalAddress","addressLocality":"Honolulu","addressRegion":"HI","addressCountry":"US"}}},
+        {"@type":"MusicEvent","name":"KingShadP Live - Los Angeles","startDate":"2025-09-03","location":{"@type":"Place","name":"Red Ember Hall","address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"}}},
+        {"@type":"MusicEvent","name":"KingShadP Live - New York","startDate":"2025-10-18","location":{"@type":"Place","name":"Empire Vault","address":{"@type":"PostalAddress","addressLocality":"New York","addressRegion":"NY","addressCountry":"US"}}}
+      ]
+    }</script>
+
+    <!-- ================= MANIFEST / PWA ================= -->
+    <link rel="manifest" href="manifest.json" />
+
     <style>
-        :root {
-            --rose-gold: #e0bfb8;
-            --rose-gold-soft: #f0e0d6;
-            --matte-black: #0b0b0b;
-            --candy-red: #e34234;
-            --candy-red-hot: #ff5a49;
-            --gradient-dark: radial-gradient(circle at 30% 20%, #1d1d1d 0%, #000 70%);
-        }
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background: var(--matte-black);
-            color: var(--rose-gold-soft);
-        }
-        a { color: var(--rose-gold); }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: rgba(0,0,0,0.6); position: fixed; width: 100%; z-index: 1000; }
-        nav a { text-decoration: none; color: var(--rose-gold); font-weight: 600; margin: 0 1rem; }
-        .hero { text-align: center; padding: 8rem 1rem; background: var(--gradient-dark); }
-        .hero img { max-width: 200px; }
-        .hero h1 { font-size: 3rem; color: var(--rose-gold); letter-spacing: 2px; }
-        .tagline { font-size: 1.2rem; color: var(--rose-gold-soft); }
-        .section-inner { max-width: 1100px; margin: 0 auto; padding: 4rem 1rem; }
-        .section-title { font-size: 2rem; color: var(--candy-red); text-transform: uppercase; letter-spacing: 2px; }
-        footer { text-align: center; padding: 2rem 1rem; background: #050505; }
-        footer .socials { margin-bottom: 1rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-        footer .socials a { color: var(--rose-gold); text-decoration: none; font-size: 1rem; font-weight: 600; }
-        .instagram-feed, .youtube-videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 2rem; }
-        iframe { width: 100%; border: none; border-radius: 8px; background: #111; }
-        @media (max-width: 640px) {
-            .hero h1 { font-size: 2.3rem; }
-            .section-title { font-size: 1.6rem; }
-        }
+        body { margin:0; font-family:'Montserrat',sans-serif; background:#0b0b0b; color:#f0e0d6; }
+        h1, h2, h3 { font-family:'Oswald',sans-serif; }
+        header.hero { text-align:center; padding:5rem 1rem; background:linear-gradient(to bottom, #1d1d1d, #000); color:#e0bfb8; }
+        .section-title { font-size:2rem; margin-bottom:1rem; }
+        section { padding:3rem 1rem; }
+        .btn { background:#e34234; color:#fff; padding:.8rem 1.5rem; border-radius:30px; text-decoration:none; display:inline-block; margin-top:1rem; }
+        .btn:hover { background:#ff5a49; }
+        footer { text-align:center; padding:2rem; background:#050505; color:#7a6b64; font-size:.8rem; }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#home"><img src="KINGSHADP-logos_transparent.png" alt="KingShadP Logo" style="height:40px;" /></a>
-        <div>
-            <a href="#about">About</a>
-            <a href="#music">Music</a>
-            <a href="#merch">Merch</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
-
     <header class="hero" id="home">
-        <img src="KINGSHADP-logos_transparent.png" alt="KingShadP Logo">
+        <img src="KINGSHADP-logos_transparent.png" alt="KingShadP Logo" style="max-width:200px;" />
         <h1>KINGSHADP</h1>
-        <p class="tagline">Rise Like a King, Inspire Like a Legend</p>
+        <p>Rise Like a King, Inspire Like a Legend</p>
+        <a href="#music" class="btn">Listen Now</a>
+        <a href="#merch" class="btn">Official Merch</a>
     </header>
 
-    <section id="about" class="section-inner">
+    <section id="about">
         <h2 class="section-title">About</h2>
-        <p>KingShadP is a dynamic and trailblazing artist—an architect of energy—blending raw emotion, cinematic atmosphere, and rhythmic fire. Powered by the signature palette of Rose Gold, Matte Black, and Candy Red, his sonic universe is both regal and rebellious. From underground sessions and late-night writing marathons to high-voltage performances, every movement is fueled by vision, perseverance, and purpose. His mission: turn personal struggle, ambition, and elevation into anthems that move culture forward.</p>
+        <p>KingShadP is a dynamic and trailblazing artist blending raw emotion, cinematic atmosphere, and rhythmic fire. His signature style is defined by <strong>Rose Gold</strong>, <strong>Matte Black</strong>, and <strong>Candy Red</strong>.</p>
     </section>
 
-    <section id="music" class="section-inner">
-        <h2 class="section-title">Music</h2>
-        <div class="youtube-videos">
-            <!-- This pulls the uploads for the YouTube channel (username-based). 
-                 If this doesn't work for your channel, replace with specific video embed URLs. -->
-                <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
-        </div>
-        <h2 class="section-title">Instagram Feed</h2>
-        <div class="instagram-feed">
-            <!-- Replace CODE with actual Instagram post shortcodes or use a plugin/service for auto-feed -->
-            <iframe src="https://www.instagram.com/p/CODE/embed" allowtransparency="true" loading="lazy"></iframe>
-        </div>
+    <section id="music">
+        <h2 class="section-title">Music & Videos</h2>
+        <iframe src="https://open.spotify.com/embed/artist/Kingshadp" width="100%" height="300" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=KingShadShit" width="100%" height="300" frameborder="0" allowfullscreen></iframe>
     </section>
 
-    <section id="merch" class="section-inner">
+    <section id="shows">
+        <h2 class="section-title">Upcoming Shows</h2>
+        <ul>
+            <li>2025-08-12 - Honolulu, HI @ Black Sand Lounge</li>
+            <li>2025-09-03 - Los Angeles, CA @ Red Ember Hall</li>
+            <li>2025-10-18 - New York, NY @ Empire Vault</li>
+        </ul>
+    </section>
+
+    <section id="merch">
         <h2 class="section-title">Merch</h2>
-        <p>Exclusive drops. Limited runs. Represent the brand.</p>
-        <p><a href="https://youbrowseyoubuy.myshopify.com" target="_blank" rel="noopener" style="color: var(--candy-red); font-weight:700;">Shop Now</a></p>
+        <p>Own the look. Premium drops inspired by brand metals and flame energy.</p>
+        <a class="btn" href="https://youbrowseyoubuy.myshopify.com" target="_blank">Shop Now</a>
     </section>
 
-    <section id="contact" class="section-inner">
+    <section id="contact">
         <h2 class="section-title">Contact</h2>
         <p>Email: <a href="mailto:kingshadp@example.com">kingshadp@example.com</a></p>
     </section>
 
     <footer>
-        <div class="socials">
-            <a href="https://instagram.com/KingShadP" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://twitter.com/KingShadP" target="_blank" rel="noopener">Twitter/X</a>
-            <a href="https://facebook.com/KingShadP" target="_blank" rel="noopener">Facebook</a>
-            <a href="https://youtube.com/@KingShadP" target="_blank" rel="noopener">YouTube</a>
-            <a href="https://open.spotify.com/artist/Kingshadp" target="_blank" rel="noopener">Spotify</a>
-        </div>
-        <p>&copy; 2024 KINGSHADP. All Rights Reserved.</p>
+        <p>&copy; 2025 KingShadP. All rights reserved.</p>
     </footer>
 </body>
 </html>
